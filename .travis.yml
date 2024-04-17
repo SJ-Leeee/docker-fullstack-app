@@ -1,0 +1,23 @@
+languae: generic
+
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - docker build -t cjstkrak/docker-multi-app -f ./frontend/Dockerfile.dev ./frontend
+
+script:
+  - docker run -e CI=true cjstkrak/docker-multi-app npm run test
+
+after_success:
+  - docker build -t cjstkrak/docker-multi-app-frontend ./frontend
+  - docker build -t cjstkrak/docker-multi-app-backend ./backend
+  - docker build -t cjstkrak/docker-multi-app-nginx ./nginx
+
+  - echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_ID" --password-stdin
+
+  - docker push cjstkrak/docker-multi-app-frontend
+  - docker push cjstkrak/docker-multi-app-backend
+  - docker push cjstkrak/docker-multi-app-nginx

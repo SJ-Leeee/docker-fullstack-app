@@ -34,5 +34,5 @@ app.post("/api/value", (req, res, next) => {
 });
 
 app.listen(5000, () => {
-  console.log(`서버가 5000번 포트로 열렸습니다.`);
+  console.log(`서버가 5000번 포트로 열렸습니다리.`);
 });

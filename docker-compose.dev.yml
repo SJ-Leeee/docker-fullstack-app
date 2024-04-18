@@ -36,4 +36,4 @@ services:
   #   environment:
   #     MYSQL_ROOT_PASSWORD: test
   #     MYSQL_DATABASE: myapp
-  #   # MYSQL의 데이터를 지정해줌
+  #   # MYSQL의 데이터를 지정해줌11

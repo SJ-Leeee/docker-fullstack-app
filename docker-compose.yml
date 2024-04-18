@@ -1,7 +1,7 @@
 version: "3"
 services:
   frontend:
-    image: cjstkrak/docker-multi-app-frontend
+    image: cjstkrak/docker-frontend
     container_name: app_frontend
     volumes:
       - /app/node_modules
@@ -11,7 +11,7 @@ services:
 
   nginx:
     restart: always
-    image: cjstkrak/docker-multi-app-nginx
+    image: cjstkrak/docker-nginx
     container_name: app_nginx
     ports:
       - "80:80"
@@ -21,7 +21,7 @@ services:
       - backend
 
   backend:
-    image: cjstkrak/docker-multi-app-backend
+    image: cjstkrak/docker-backend
     container_name: app_backend
     volumes:
       - /app/node_modules

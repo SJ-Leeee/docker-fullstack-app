@@ -21,3 +21,16 @@ after_success:
   - docker push cjstkrak/docker-multi-app-frontend
   - docker push cjstkrak/docker-multi-app-backend
   - docker push cjstkrak/docker-multi-app-nginx
+
+deploy:
+  provider: elasticbeanstalk
+  region: "ap-northeast-2"
+  app: "docker-fullstack-app"
+  env: "Docker-fullstack-app-env"
+  bucket_name: elasticbeanstalk-ap-northeast-2-654654225421
+  bucket_path: "docker-fullstack-app"
+  on
+    branch: master
+
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_ACCESS_SECRET_KEY

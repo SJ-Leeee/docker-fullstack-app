@@ -6,16 +6,16 @@ const db = require("./db.js");
 const app = express();
 
 // 테이블 생성하기
-// db.pool.query(
-//   `CREATE TABLE lists (
-//     id INTEGER AUTO_INCREMENT,
-//     value TEXT
-//     PRIMARY KEY (id)
-// )`,
-//   (err, results, fileds) => {
-//     console.log("results: ", results);
-//   }
-// );
+db.pool.query(
+  `CREATE TABLE lists (
+    id INTEGER AUTO_INCREMENT,
+    value TEXT
+    PRIMARY KEY (id)
+)`,
+  (err, results, fileds) => {
+    console.log("results: ", results);
+  }
+);
 
 // app.use(cors({ origin: "*" }));
 app.use(bodyPerser.json());

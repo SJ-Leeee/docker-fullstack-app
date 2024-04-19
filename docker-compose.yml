@@ -27,8 +27,8 @@ services:
       - /app/node_modules
       - ./backend:/app
     environment:
-      - MYSQL_HOST: $MYSQL_HOST
-      - MYSQL_USER: $MYSQL_USER
-      - MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD
-      - MYSQL_DATABASE: $MYSQL_DATABASE
-      - MYSQL_PORT: $MYSQL_PORT
+      - MYSQL_HOST: ${MYSQL_HOST}
+      - MYSQL_USER: ${MYSQL_USER}
+      - MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE: ${MYSQL_DATABASE}
+      - MYSQL_PORT: ${MYSQL_PORT}
